@@ -9,6 +9,10 @@ server.on('request', function (request, response) {
     //
     console.log('收到请求了，请求路径是：' + request.url)
     console.log('请求我的客户端的地址是：', request.socket.remoteAddress, request.socket.remotePort)
+
+    //
+    response.statusCode = 200;
+    response.setHeader('Content-Type', 'text/plain');
     //
     // 根据不同的请求路径发送不同的响应结果
     // 1. 获取请求路径
